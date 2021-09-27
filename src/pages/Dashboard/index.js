@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View } from 'react-native'
+import { View, Button } from 'react-native'
 
 import md5 from 'md5'
 
@@ -13,17 +13,17 @@ export const Dashboard = () => {
     const hash = md5( timeStamp + privateKey + publicKey )
 
     const [comic, setComic] = useState(false)
-    const [character, setCharacter] = useState(false)
-    
+    //const [character, setCharacter] = useState(false)
     
     useEffect( async () => {
 
         const URL = `http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         const data = await fetch(URL)
-        const comic = await data.json()
-        console.log(comic)
+        const myComics = await data.json()
+        console.log(myComics)
+        setComic(false)
 
-    }, [comic] )
+    }, [ comic == true ] )
 
     //useEffect( async () => {
 
@@ -38,8 +38,8 @@ export const Dashboard = () => {
 
         <View style = { styles.container }>
 
-                <Button title = "COMICS" onPress = { setComic(true) } />
-                <Button title = "CHARACTERS" onPress = { setCharacter(true) } />
+                <Button title = "COMICS" onPress = { () => setComic(true) }></Button>
+                
 
         </View>
 
