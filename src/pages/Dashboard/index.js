@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { View, Button } from 'react-native'
 
 import md5 from 'md5'
@@ -11,34 +11,28 @@ export const Dashboard = () => {
     const publicKey = '56c78e0a40ce63949db3669345950628'
     const privateKey = 'c8807d039107ef3ab3cdd034167fbb7abd4262d2'
     const hash = md5( timeStamp + privateKey + publicKey )
-
-    const [comic, setComic] = useState(false)
-    //const [character, setCharacter] = useState(false)
     
-    useEffect( async () => {
+    const getCharacter = async () => {
 
-        const URL = `http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        const URL = `http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         const data = await fetch(URL)
-        const myComics = await data.json()
-        console.log(myComics)
-        setComic(false)
+        const myCharacters = await data.json()
+        var i = 0
 
-    }, [ comic == true ] )
+        while( i < myCharacters.data['count'] ) {
 
-    //useEffect( async () => {
+            console.log(myCharacters.data['results'][i].name)
+            i++
 
-    //     const URL = `http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
-    //     const data = await fetch(URL)
-    //     const character = await data.json()
-    //     console.log(character)
+        }
 
-    // }, [character] )
+    }
 
     return(
 
         <View style = { styles.container }>
 
-                <Button title = "COMICS" onPress = { () => setComic(true) }></Button>
+                <Button title = "CHARACTERS" onPress = { () => getCharacter() } />
                 
 
         </View>
