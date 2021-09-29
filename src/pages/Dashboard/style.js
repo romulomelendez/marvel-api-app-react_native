@@ -11,4 +11,19 @@ export const styles = StyleSheet.create({
 
     },
 
+    text: {
+
+        fontSize: 25,
+        color: '#000',
+
+    },
+
+    button: {
+
+        padding: 15,
+        borderRadius: 4,
+        backgroundColor: '#0ff',
+
+    }
+
 })

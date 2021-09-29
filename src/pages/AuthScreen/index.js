@@ -9,10 +9,10 @@ export const AuthScreen = ({ navigation }) => {
   
       <View style = { styles.container }>
   
-        <Text style ={ styles.text }>MOJO's Screen</Text>
-        <TouchableOpacity onPress = { () => navigation.navigate('Dashboard') }>
+        <Text style = { styles.textTitle }>MOJO's Screen</Text>
+        <TouchableOpacity style = { styles.button }onPress = { () => navigation.navigate('Dashboard') }>
 
-          <Text>PRESS ME</Text>
+          <Text style = { styles.text }>PRESS ME</Text>
 
         </TouchableOpacity>
   
