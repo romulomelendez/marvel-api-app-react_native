@@ -5,35 +5,56 @@ export const styles = StyleSheet.create({
   container: {
 
     flex: 1,
-    backgroundColor: '#ff0',
+    backgroundColor: '#820D01',
     alignItems: 'center',
     justifyContent: 'center',
 
   },
 
-  textTitle: {
-      
-    fontSize: 25,
-    color: '#000',
-    margin: 10,
-    
+  container2: {
+  
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    height: 170,
+    width: 300,
+    padding: 10,
+    justifyContent: 'center',
+
   },
 
-  text: {
-      
+  tittle: {
+
     fontSize: 25,
-    color: '#ff0',
-    margin: 10,
-    
+    color: '#FFF',
+    margin: 15,
+
+  },
+
+  input: {
+
+    fontSize: 15,
+    padding: 10,
+    margin: 5,
+
   },
 
   button: {
 
-    padding: 15,
-    borderRadius: 4,
-    backgroundColor: '#000',
-    margin: 10,
-      
-  }
+    backgroundColor: '#820D01',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    padding: 13,
+    margin: 5,
+
+  },
+
+  loginText: {
+    
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: 'bold',
+
+},
 
 })
