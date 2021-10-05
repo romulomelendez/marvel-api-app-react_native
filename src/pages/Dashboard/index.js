@@ -8,7 +8,7 @@ import { styles } from './style'
 export const Dashboard = () => {
 
     const [controlVariable, setControlVariable] = useState(0)
-    const [responseOfApi, setResponseOfApi] = useState({})
+    const [responseOfApi, setResponseOfApi] = useState([])
         
     const getCharacterByApi = async () => {
         
@@ -22,8 +22,16 @@ export const Dashboard = () => {
         //  Doing the Request and catching the response of it
         const data = await fetch(URL)
         const characters = await data.json()
-        setResponseOfApi(characters.data['results'])
+
+        for ( var i = 0; i = 20; i++) {
+
+            setControlVariable(characters.data['results'][i])
+
+        }
+
         setControlVariable(controlVariable + 1)
+        
+        //setResponseOfApi(characters.data['results'])
         //const items = [] = myCharacters.data['results'][i].name
         
     }
@@ -46,7 +54,16 @@ export const Dashboard = () => {
                             
                             controlVariable === 0 ? <Text style = { styles.text }>CHARACTERS</Text>
                             
-                            : <Text>{ responseOfApi[1].name }</Text>
+                            : responseOfApi.forEach( item => {
+
+                                <>
+                                
+                                    <Text>{ item.id }</Text>
+                                    <Text>{ item.name }</Text>
+
+                                </>
+
+                            })
                             
                         }
 
