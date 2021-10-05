@@ -8,6 +8,7 @@ import { styles } from './style'
 export const Dashboard = () => {
 
     const [controlVariable, setControlVariable] = useState(0)
+    const [controlVariable2, setControlVariable2] = useState(0)
     const [responseOfApi, setResponseOfApi] = useState([])
         
     const getCharacterByApi = async () => {
@@ -25,7 +26,8 @@ export const Dashboard = () => {
 
         for ( var i = 0; i = 20; i++) {
 
-            setControlVariable(characters.data['results'][i])
+            var aux = [i] = characters.data['results'][i]
+            setResponseOfApi(aux)
 
         }
 
@@ -76,13 +78,13 @@ export const Dashboard = () => {
 
                     <Image style = { styles.banner } source = { require('../../../assets/comic.jpeg') } />
 
-                    <TouchableOpacity style = { styles.button } onPress = { () => getCharacterByApi() }>
+                    <TouchableOpacity style = { styles.button } onPress = { () => getComicByApi() }>
 
                         {
 
-                            controlVariable === 0 ? <Text style = { styles.text }>COMICS</Text>
+                            controlVariable2 === 0 ? <Text style = { styles.text }>COMICS</Text>
 
-                            : <Text>{ responseOfApi[1].comics }</Text>
+                            : <Text>MEUS COMICS</Text>
 
                         }
 
