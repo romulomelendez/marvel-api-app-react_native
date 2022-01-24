@@ -3,7 +3,7 @@ import { Text, View, TextInput, TouchableOpacity, } from 'react-native'
 
 import { styles } from './style'
 
-export const AuthScreen = ({ navigation }) => {
+export const Login = ({ navigation }) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState()
@@ -12,7 +12,7 @@ export const AuthScreen = ({ navigation }) => {
 
       <View style = { styles.container }>
     
-        <Text style = { styles.tittle }>User Authentication</Text>
+        <Text style = { styles.title }>Login</Text>
 
         <View style = { styles.container2 }>
 
@@ -46,7 +46,7 @@ export const AuthScreen = ({ navigation }) => {
 
           }}>
 
-            <Text style = { styles.loginText }>LOGIN</Text>
+            <Text style = { styles.loginText }>GO</Text>
 
           </TouchableOpacity>
 

@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
 
   },
 
-  tittle: {
+  title: {
 
     fontSize: 25,
     color: '#FFF',
